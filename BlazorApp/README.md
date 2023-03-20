@@ -1,0 +1,1 @@
+dotnet new blazorserver -f net6.0
