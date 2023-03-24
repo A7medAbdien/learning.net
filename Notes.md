@@ -36,3 +36,33 @@ DDD is a design pattern whereby the structure and language of your code, includi
 The pattern describes independent problem areas as bounded contexts, and emphasizes a common language to describe these problems.
 
 *Split the code based on the domain problem*
+
+---
+
+# Resiliency
+
+Resiliency is the ability to recover from transient failures.
+
+## Code-based resiliency
+
+uses Polly, 
+
+### Retry policy
+
+The request is retried after a short wait if an error response is received.
+
+### Circuit Breaker policy
+
+A Circuit Breaker policy gives the target service a break after a repeated number of failures.
+
+## Infrastructure-based resiliency
+
+To implement infrastructure-based resiliency, you can use a **service mesh**. Aside from resiliency without changing code, a service mesh provides traffic management, policy, security, strong identity, and observability.
+
+Architecturally speaking, a service mesh is composed of two components: a control plane and a data plane.
+
+The control plane component has a number of components that support managing the service mesh.
+
+The data plane component consists of proxies that are transparently injected alongside each service—a pattern known as the Sidecar pattern.
+
+Some popular service mesh options for Kubernetes clusters include Linkerd, Istio, and Consul.
