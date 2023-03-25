@@ -66,3 +66,19 @@ The control plane component has a number of components that support managing the
 The data plane component consists of proxies that are transparently injected alongside each service—a pattern known as the Sidecar pattern.
 
 Some popular service mesh options for Kubernetes clusters include Linkerd, Istio, and Consul.
+
+---
+
+# Logging and Monitoring
+
+In a microservices architecture, a solution is needed that can:
+
+1. Aggregate log traces from several microservices.
+2. Correlate the log traces.
+3. Carry additional contextual information, like the hosted infrastructure, to efficiently debug the app.
+
+## Structured Logging
+
+Structured logging is an approach in which logs are written in a consistent message format optimized for machine readability. These messages abide by a predefined schema, which allows the logs to be parsed and treated as data sets.
+
+Each microservice requires a different instrumentation key.
